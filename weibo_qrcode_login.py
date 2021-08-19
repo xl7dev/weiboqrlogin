@@ -125,8 +125,6 @@ class weibo:
                 date_stamp, uid,
                 self.source)
             res = requests.get(url, headers=headers).json()
-            import ipdb;
-            ipdb.set_trace()
             get_message = res['direct_messages'][0]['text']
             if send_message_text['text'] == get_message:
                 logger.info("等待回复中...")
